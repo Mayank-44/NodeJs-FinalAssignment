@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .jumbotron {
+      max-height: 250px;
+      text: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background: url('https://goldbondultimate.com/wp-content/uploads/2017/06/new-jumbotron-background.png')
+    }
+
+    .scroll {
+      height: 500px;
+    }
+
+    .btn-outline-secondary {
+      border-color: #f0b27a;
+    }
+
+    .btn-outline-secondary:hover {
+      background: #f0b27a;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="jumbotron sticky-top">
+    <h1 class="display-4" style="color:white;">Hello, {{name}}!</h1>
+    <p class="lead" style="color:white;">Welcome to you personal Band List</p>
+    <a class="btn btn-primary btn" href="/logout" role="button">Logout</a>
+  </div>
+  <form method="POST" action="/add">
+    <div style="margin-left:100px;margin-right:0px;margin-top:0px" class="container mt-5">
+      <div style="margin-top:0px;">
+        <div class="col-15 form-group" style="margin-top:0px;">
+          <div>
+            <input type="text" class="form-control" placeholder="Add new band..." aria-label="Username"
+              aria-describedby="basic-addon1" name="band">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <br>
+  <div style="margin-left:100px" class="container mt-2">
+    <div>
+      <div>
+        <div>
+          <div class="scroll">
+            <table class="table">
+              <tr style="background:#abebc6">
+                <th><span style="margin-left:50px;">Band Name</span></th>
+                <th><span style="float:right; margin-right:50px">Action</span></th>
+              </tr>
+              {{#each bands as |band|}}
+              <tr>
+                <td>
+                  <h5><span style="margin-left:50px">{{band.bandname}}</span></h5>
+                </td>
+                <td>
+                  <form method="POST" style="display: inline;">
+                    <div class="alert alert-light" role="alert" style=" display:inline">
+                      <button formaction="/delete?_method=DELETE" style="float:right" class="btn btn-outline-secondary"
+                        name="bandDelete" value={{band.bandid}}>Bin 🗑</button>
+                    </div>
+                  </form>
+                  <div class="alert alert-light" role="alert" style="display:inline">
+                    <button class="btn btn-outline-info" style="float:right; margin-right:20px" name="bandedit"
+                      value={{band.bandid}} onclick="location.href='update/{{band.bandid}}/?_method=GET'">Edit
+                      ⚙</button>
+                  </div>
+                </td>
+              </tr>
+              {{/each}}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</body>
+
+</html>

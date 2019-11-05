@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+		body {
+			background-color: #f4f4f4;
+			color: #5a5656;
+			font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+			font-size: 16px;
+			line-height: 1.5em;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		h1 {
+			font-size: 1em;
+		}
+
+		h1,
+		p {
+			margin-bottom: 10px;
+		}
+
+		strong {
+			font-weight: bold;
+		}
+
+		.uppercase {
+			text-transform: uppercase;
+		}
+
+		/* ---------- LOGIN ---------- */
+		#login {
+			margin: 50px auto;
+			width: 300px;
+		}
+
+		#signup {
+			margin: 50px auto;
+			width: 300px;
+		}
+
+		form fieldset input[type="text"],
+		input[type="password"],
+		input[type="date"],
+		input[type="email"] {
+			background-color: #e5e5e5;
+			border: none;
+			border-radius: 3px;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			color: #5a5656;
+			font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+			font-size: 14px;
+			height: 50px;
+			outline: none;
+			padding: 0px 10px;
+			width: 280px;
+			-webkit-appearance: none;
+		}
+
+		form fieldset input[type="submit"] {
+			background-color: #008dde;
+			border: none;
+			border-radius: 3px;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			color: #f4f4f4;
+			cursor: pointer;
+			font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+			height: 50px;
+			text-transform: uppercase;
+			width: 300px;
+			-webkit-appearance: none;
+		}
+
+		form fieldset a {
+			color: #5a5656;
+			font-size: 10px;
+		}
+
+		form fieldset a:hover {
+			text-decoration: underline;
+		}
+
+		.btn-round {
+			background-color: #5a5656;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+			color: #f4f4f4;
+			display: block;
+			font-size: 12px;
+			height: 50px;
+			line-height: 50px;
+			margin: 30px 125px;
+			text-align: center;
+			text-transform: uppercase;
+			width: 50px;
+		}
+
+		div.vertical-line {
+			width: 1px;
+			/* Line width */
+			background-color: black;
+			/* Line color */
+			height: 100%;
+			/* Override in-line if you want specific height. */
+			float: left;
+			/* Causes the line to float to left of content.
+        You can instead use position:absolute or display:inline-block
+        if this fits better with your design */
+		}
+	</style>
+</head>
+
+<body>
+	<div class="alert alert-secondary" role="alert" style="margin-left:20px;margin-right:20px;margin-top:20px;">
+		<span style="text-align:center">
+			<h3><b>Just take few minutes!!!</b></h3>
+		</span>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<div id="login" style="margin-left:60px;">
+					<h1>
+						<strong>Welcome.</strong> Please login.
+					</h1>
+					<form action="login" method="post">
+						<fieldset>
+							<p>
+								<input type="text" name="email" value="Email"
+									onBlur="if(this.value=='')this.value='Email'"
+									onFocus="if(this.value=='Email')this.value='' " pattern=".{5,50}"
+									title="5 to 50 characters">
+							</p>
+							<p>
+								<input type="password" name="password" value="Password"
+									onBlur="if(this.value=='')this.value='Password'"
+									onFocus="if(this.value=='Password')this.value='' " pattern=".{5,50}"
+									title="5 to 50 characters">
+							</p>
+							<p>
+								<a href="forgot">Forgot Password?</a>
+							</p>
+							<p>
+								<input type="submit" value="Login">
+							</p>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="vertical-line" style="height: 400px;margin-left:170px;margin-top:50px;"></div>
+			</div>
+			<div class="col-sm-4">
+				<div id="signup" style="margin-right:60px;">
+					<h1>
+						<strong>Welcome.</strong> Please Sign Up.
+					</h1>
+					<form action="signup" method="post">
+						<fieldset>
+							<p>
+								<input type="text" name="username" value="Username"
+									onBlur="if(this.value=='')this.value='Username'"
+									onFocus="if(this.value=='Username')this.value='' " pattern=".{5,50}"
+									title="5 to 50 characters">
+							</p>
+							<p>
+								<input type="text" name="college" value="College/Company"
+									onBlur="if(this.value=='')this.value='College/Company'"
+									onFocus="if(this.value=='College/Company')this.value='' " pattern=".{5,50}"
+									title="5 to 50 characters">
+							</p>
+							<p>
+								<input type="text" name="date" value="Date of Birth" placeholder="Date"
+									onblur="(this.type='text')" class="textbox-n" onfocus="(this.type='date')"
+									id="date">
+							</p>
+							<!-- <p>
+    				<input type="date" name="date" value="Date of Birth"
+    					onBlur="if(this.value=='')this.value='date'"
+    					onFocus="if(this.value=='date')this.value='' "
+    					pattern=".{5,50}" title="5 to 50 characters">
+    			</p> -->
+							</p>
+							<input type="email" name="email" value="Email" onBlur="if(this.value=='')this.value='Email'"
+								onFocus="if(this.value=='Email')this.value='' " pattern=".{5,50}"
+								title="5 to 50 characters">
+							</p>
+							<p>
+								<input type="password" name="password" value="Password"
+									onBlur="if(this.value=='')this.value='Password'"
+									onFocus="if(this.value=='Password')this.value='' " pattern=".{5,50}"
+									title="5 to 50 characters">
+							</p>
+							<p>
+								<input type="submit" value="Signup">
+							</p>
+						</fieldset>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

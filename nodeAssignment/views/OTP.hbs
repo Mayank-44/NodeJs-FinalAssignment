@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>OTP</title>
+</head>
+
+<body style="background-image:url('https://wallpapercave.com/wp/wp2289132.jpg');background-repeat: no-repeat;
+  background-size: 100% ">
+    <form action="/checkotp" method="POST">
+        {{!-- <input type="hidden" value={{id}} name="id"> --}}
+        <div style="width:800px; margin:auto;margin-top:400px;">
+            <input type="hidden" name="email" value="{{email}}">
+            <input type="text" name="otp" class="form-control" placeholder="OTP" aria-label="Band">
+            <button style="margin-top:10px" type="submit" class="btn btn-primary btn-lg btn-block">Verify</button>
+        </div>
+
+    </form>
+</body>
+
+</html>
